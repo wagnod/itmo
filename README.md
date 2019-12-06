@@ -1,0 +1,2 @@
+# itmo
+ITMO studying projects
