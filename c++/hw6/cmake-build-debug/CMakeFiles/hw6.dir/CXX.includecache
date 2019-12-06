@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/rugar/Desktop/c++/hw6/String.cpp
+cstring
+-
+iostream
+-
+String.h
+C:/Users/rugar/Desktop/c++/hw6/String.h
+
+C:/Users/rugar/Desktop/c++/hw6/String.h
+cstddef
+-
+
+C:/Users/rugar/Desktop/c++/hw6/main.cpp
+iostream
+-
+String.h
+C:/Users/rugar/Desktop/c++/hw6/String.h
+

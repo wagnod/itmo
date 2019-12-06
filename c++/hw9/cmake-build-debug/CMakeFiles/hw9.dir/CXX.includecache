@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/rugar/Desktop/c++/hw9/Integer.h
+
+C:/Users/rugar/Desktop/c++/hw9/main.cpp
+iostream
+-
+cmath
+-
+iomanip
+-
+cstdio
+-
+Integer.h
+C:/Users/rugar/Desktop/c++/hw9/Integer.h
+

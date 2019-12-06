@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="hw8"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hw8">
+				<Option output="C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/hw8.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/Makefile&quot;  VERBOSE=1 hw8"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hw8/fast">
+				<Option output="C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/hw8.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/Makefile&quot;  VERBOSE=1 hw8/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/rugar/Desktop/c++/hw8/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Budget/Budget.cpp">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Budget/Budget.h">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Department/Department.cpp">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Department/Department.h">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Department/FundRaisingDepartment.cpp">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Department/FundRaisingDepartment.h">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Department/GrantDepartment.cpp">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Department/GrantDepartment.h">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Department/Trust.cpp">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Department/Trust.h">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Description/Cause.cpp">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Description/Cause.h">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Description/Description.cpp">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Description/Description.h">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Description/Event.cpp">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Description/Event.h">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Employee/CEO.cpp">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Employee/CEO.h">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Employee/Director.cpp">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Employee/Director.h">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Employee/Employee.cpp">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Employee/Employee.h">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Employee/Secretary.cpp">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Employee/Secretary.h">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/FundsBalance/FundsBalance.cpp">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/FundsBalance/FundsBalance.h">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Office/Office.cpp">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/Office/Office.h">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/main.cpp">
+			<Option target="hw8"/>
+		</Unit>
+		<Unit filename="C:/Users/rugar/Desktop/c++/hw8/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

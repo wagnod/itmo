@@ -1,0 +1,133 @@
+Dr. Memory version 2.2.0 build 1 built on Jul  1 2019 00:42:20
+Windows version: WinVer=105;Rel=1903;Build=18362;Edition=Enterprise
+Dr. Memory results for pid 2320: "untitled4.exe"
+Application cmdline: "C:\Users\rugar\Desktop\c++\hw7.1\cmake-build-debug\untitled4.exe"
+Recorded 117 suppression(s) from default C:\Program Files (x86)\Dr. Memory\bin\suppress-default.txt
+
+Error #1: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x04040000-0x04040004 4 byte(s)
+# 0 VFBASICS.dll!?                           +0x0      (0x686c711a <VFBASICS.dll+0x1711a>)
+# 1 VFBASICS.dll!?                           +0x0      (0x686c727a <VFBASICS.dll+0x1727a>)
+# 2 KERNELBASE.dll!SetUnhandledExceptionFilter
+# 3 .text        
+# 4 mainCRTStartup
+# 5 ntdll.dll!__RtlUserThreadStart
+Note: @0:00:00.317 in thread 12124
+Note: next higher malloc: 0x040404b0-0x040404d0
+Note: instruction: cmp    (%eax) $0xeeeeeeee
+
+Error #2: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x04040000-0x04040004 4 byte(s)
+# 0 VFBASICS.dll!?                    +0x0      (0x686c7347 <VFBASICS.dll+0x17347>)
+# 1 KERNELBASE.dll!GetFullPathNameA
+# 2 msvcrt.dll!_fullpath 
+# 3 __mingw_opendir                    [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 4 __mingw_glob                       [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 5 _setargv                           [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 6 .text        
+# 7 mainCRTStartup
+# 8 ntdll.dll!__RtlUserThreadStart
+Note: @0:00:00.718 in thread 12124
+Note: next higher malloc: 0x040404b0-0x040404d0
+Note: instruction: cmp    (%eax) $0xeeeeeeee
+
+Error #3: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x04040000-0x04040004 4 byte(s)
+# 0 VFBASICS.dll!?                    +0x0      (0x686c7347 <VFBASICS.dll+0x17347>)
+# 1 KERNELBASE.dll!FindFirstFileExW
+# 2 KERNELBASE.dll!FindFirstFileA
+# 3 .text                              [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 4 __mingw_opendir                    [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 5 .text                              [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 6 __mingw_glob                       [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 7 _setargv                           [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 8 .text        
+# 9 mainCRTStartup
+#10 ntdll.dll!__RtlUserThreadStart
+Note: @0:00:00.756 in thread 12124
+Note: next higher malloc: 0x040404b0-0x040404d0
+Note: instruction: cmp    (%eax) $0xeeeeeeee
+
+Error #4: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW 
+# 1 KERNELBASE.dll!FindNextFileA 
+# 2 .text                              [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 3 __mingw_glob                       [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 4 _setargv                           [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 5 .text        
+# 6 mainCRTStartup
+# 7 ntdll.dll!__RtlUserThreadStart
+Note: @0:00:00.798 in thread 12124
+Note: instruction: cmp    %eax $0x00000018
+
+Error #5: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW 
+# 1 KERNELBASE.dll!FindNextFileA 
+# 2 .text                              [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 3 __mingw_glob                       [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 4 _setargv                           [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 5 .text        
+# 6 mainCRTStartup
+# 7 ntdll.dll!__RtlUserThreadStart
+Note: @0:00:00.801 in thread 12124
+Note: instruction: data16 mov    %cx -> 0x00000234(%esi,%eax,2)
+
+Error #6: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW 
+# 1 KERNELBASE.dll!FindNextFileA 
+# 2 .text                              [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 3 __mingw_glob                       [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 4 _setargv                           [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 5 .text        
+# 6 mainCRTStartup
+# 7 ntdll.dll!__RtlUserThreadStart
+Note: @0:00:00.812 in thread 12124
+Note: instruction: test   %eax %eax
+
+Error #7: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x04040000-0x04040004 4 byte(s)
+# 0 VFBASICS.dll!?                    +0x0      (0x686c7347 <VFBASICS.dll+0x17347>)
+# 1 KERNELBASE.dll!FindClose     
+# 2 __mingw_closedir                   [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 3 __mingw_glob                       [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 4 _setargv                           [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 5 .text        
+# 6 mainCRTStartup
+# 7 ntdll.dll!__RtlUserThreadStart
+Note: @0:00:00.828 in thread 12124
+Note: next higher malloc: 0x040404b0-0x040404d0
+Note: instruction: cmp    (%eax) $0xeeeeeeee
+
+Error #8: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x04040000-0x04040004 4 byte(s)
+# 0 VFBASICS.dll!?                    +0x0      (0x686c7347 <VFBASICS.dll+0x17347>)
+# 1 KERNELBASE.dll!FindClose     
+# 2 __mingw_closedir                   [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 3 __mingw_glob                       [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 4 _setargv                           [C:/Users/rugar/Desktop/c++/hw7.1/main.cpp:17]
+# 5 .text        
+# 6 mainCRTStartup
+# 7 ntdll.dll!__RtlUserThreadStart
+Note: @0:00:00.844 in thread 12124
+Note: next higher malloc: 0x040404b0-0x040404d0
+Note: instruction: cmp    (%eax) $0xeeeeeeee
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+	Error #   4:      2
+	Error #   5:      2
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      5 unique,     5 total unaddressable access(es)
+      3 unique,     5 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total GDI usage error(s)
+      0 unique,     0 total handle leak(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      4 potential error(s) (suspected false positives)
+         (details: C:\Users\rugar\AppData\Roaming\Dr. Memory\DrMemory-untitled4.exe.2320.000\potential_errors.txt)
+     12 unique,    12 total,    635 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: C:\Users\rugar\AppData\Roaming\Dr. Memory\DrMemory-untitled4.exe.2320.000\results.txt

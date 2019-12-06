@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/rugar/Desktop/c++/hw11/LinkedPointer.h
+cstddef
+-
+
+C:/Users/rugar/Desktop/c++/hw11/LinkedPointer_impl.h
+LinkedPointer.h
+C:/Users/rugar/Desktop/c++/hw11/LinkedPointer.h
+
+C:/Users/rugar/Desktop/c++/hw11/main.cpp
+iostream
+-
+LinkedPointer_impl.h
+C:/Users/rugar/Desktop/c++/hw11/LinkedPointer_impl.h
+

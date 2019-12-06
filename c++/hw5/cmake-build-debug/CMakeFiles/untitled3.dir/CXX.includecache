@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/rugar/Desktop/c++/hw5/main.cpp
+iostream
+-
+cstdlib
+-
+mylib.h
+C:/Users/rugar/Desktop/c++/hw5/mylib.h
+
+C:/Users/rugar/Desktop/c++/hw5/mylib.h
+
