@@ -2,7 +2,7 @@
 
 ## [Android Course](https://github.com/wagnod/itmo/tree/master/Android)
 Description of each task is inside the root folder.
-* [Contacts](github.com/wagnod/itmo/tree/master/Android/Contacts)
+* [Contacts](https://github.com/wagnod/itmo/tree/master/Android/Contacts)
 * [Navigation](https://github.com/wagnod/itmo/tree/master/Android/Navigation)
 * [Weather](https://github.com/wagnod/itmo/tree/master/Android/Weather)
 * [Weather With Coroutines](https://github.com/wagnod/itmo/tree/master/Android/WeatherCoroutines)
