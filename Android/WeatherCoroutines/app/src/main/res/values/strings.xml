@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">WeatherOnline</string>
+    <string name="name">Weather</string>
+    <string name="today_s_weather">Today\'s weather</string>
+    <string name="this_day_weather">This day weather</string>
+    <string name="change_theme">change theme</string>
+    <string name="settings">Settings</string>
+</resources>
