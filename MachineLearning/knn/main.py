@@ -165,17 +165,20 @@ def params_generate():
     for kernel in KernelType:
         for func in DistFunc:
             for width in WidthType:
+                h = 0
                 matrix = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
-                m = randint(1, len(data_n))
-                if width == WidthType.variable:
-                    h = randint(0, len(dataset.values))
-                else:
-                    h = randint(0, 5)
+                m = 23
                 temp = cross_v(data_n, m)
                 for i in range(m):
                     for j in range(len(temp[i])):
                         target = temp[i][j]
-                        ans = k_func(func, kernel, width, h, target[:7])
+                        cur = temp.copy()
+                        cur = cur.pop(i)
+                        if width == WidthType.variable:
+                            h = randint(0, len(cur))
+                        else:
+                            h = randint(0, 5)
+                        ans = k_func(func, kernel, width, h, target[:7], cur)
                         if ans == target[7]:
                             k = int(target[7]) - 1
                             matrix[k][k] += 1
@@ -194,21 +197,21 @@ def params_generate():
     return result[0]
 
 
-def k_func(disFunc, kernelT, wType, h, target):
+def k_func(disFunc, kernelT, wType, h, target, data):
     dis_es = []
-    for i in range(len(data_n)):
-        dis_es.append([distance(disFunc, data_n[i], target), i, data_n[i][7]])
-    sorted(dis_es, key=lambda x: x[0])
+    for i in range(len(data)):
+        dis_es.append([distance(disFunc, data[i], target), i, data[i][7]])
+    dis_es.sort(key=lambda x: x[0])
     res = 0
     a = 0
     b = 0
     if wType == WidthType.variable:
         h = dis_es[h][0]
     if h == 0:
-        if data_n[dis_es[0][1]][:7] in target:
+        if data[dis_es[0][1]][:7] in target:
             idx = 0
             for i in range(len(dis_es)):
-                if data_n[dis_es[i][1]][:7] in target:
+                if data[dis_es[i][1]][:7] in target:
                     res += dis_es[i][2]
                     idx += 1
             res /= idx
@@ -243,9 +246,10 @@ fs_f = []
 h_variable = []
 k_fixed = []
 
-target = np.array([12.3, 13.34, 0.8684, 5.243, 2.974, 5.637, 5.063])
+target = np.array([13.07, 13.92, 0.848, 5.472, 2.994, 5.304, 5.395])
 for i in range(target.size):
     target[i] = (target[i] - min_max[i][0]) / (min_max[i][1] - min_max[i][0])
+target.sort()
 
 best = params_generate()
 f_variable.sort(key=lambda x: x[0])
@@ -258,7 +262,7 @@ for i in range(len(f_fixed)):
     k_fixed.append(f_fixed[i][0])
     fs_f.append(f_fixed[i][1])
 print(best)
-target_class = k_func(best[2], best[1], best[3], best[4], target)
+target_class = k_func(best[2], best[1], best[3], best[4], target, data_n)
 if target_class <= 1.5:
     target_class = 1
 elif 1.5 < target_class <= 2.5:
