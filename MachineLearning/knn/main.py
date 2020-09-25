@@ -112,14 +112,6 @@ def normalize(dataset, minmax):
     return dataset
 
 
-def cross_v(c, m):
-    c.sort()
-    res = [[] for i in range(m)]
-    for i in range(len(c)):
-        res[i % m].append(c[i])
-    return res
-
-
 def f_score(conf, k=3):
     f_score = [0] * k
     precision = [0] * k
@@ -161,40 +153,27 @@ def f_score(conf, k=3):
 
 
 def params_generate():
-    result = []
     for kernel in KernelType:
         for func in DistFunc:
             for width in WidthType:
-                h = 0
-                matrix = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
-                m = 23
-                temp = cross_v(data_n, m)
-                for i in range(m):
-                    for j in range(len(temp[i])):
-                        target = temp[i][j]
-                        cur = temp.copy()
-                        cur = cur.pop(i)
-                        if width == WidthType.variable:
-                            h = randint(0, len(cur))
-                        else:
-                            h = randint(0, 5)
-                        ans = k_func(func, kernel, width, h, target[:7], cur)
-                        if ans == target[7]:
-                            k = int(target[7]) - 1
-                            matrix[k][k] += 1
-                        else:
-                            k = int(target[7]) - 1
-                            s = int(ans) - 1
-                            matrix[k][s] += 1
+                if width == WidthType.fixed:
+                    h = np.linspace(0.1, 4, 10)
+                else:
+                    h = range(1, 101, 10)
+                for par in h:
+                    yield kernel, func, width, par
 
-                result.append([f_score(matrix), kernel, func, width, h])
-    result.sort(key=lambda x: x[0], reverse=True)
-    for i in range(len(result)):
-        if result[i][3] == WidthType.variable:
-            f_variable.append([result[i][4], result[i][0]])
-        else:
-            f_fixed.append([result[i][4], result[i][0]])
-    return result[0]
+
+def cross_v(kernel, dist, width, h):
+    matrix = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+    for indx in range(210):
+        target = data_n[indx][:7]
+        expected = data_n[indx][7]
+        train = list(data_n.copy())
+        del train[indx]
+        found = k_func(dist, kernel, width, h, target, train)
+        matrix[round(expected) - 1][round(found) - 1] += 1
+    return matrix
 
 
 def k_func(disFunc, kernelT, wType, h, target, data):
@@ -239,37 +218,36 @@ min_max = minmax(dataset.values)
 
 data_n = normalize(dataset.values, min_max)
 
-f_variable = []
-fs_v = []
-f_fixed = []
-fs_f = []
-h_variable = []
-k_fixed = []
-
 target = np.array([13.07, 13.92, 0.848, 5.472, 2.994, 5.304, 5.395])
 for i in range(target.size):
     target[i] = (target[i] - min_max[i][0]) / (min_max[i][1] - min_max[i][0])
-target.sort()
 
-best = params_generate()
-f_variable.sort(key=lambda x: x[0])
-f_fixed.sort(key=lambda x: x[0])
-for i in range(len(f_variable)):
-    h_variable.append(f_variable[i][0])
-    fs_v.append(f_variable[i][1])
+max_f = -1
+best_kernel = None
+best_dist = None
+best_width = None
+best_h = None
+for kernel, dist, width, h in list(params_generate()):
+    conf_m = cross_v(kernel, dist, width, h)
+    f_s = f_score(conf_m)
+    if f_s > max_f:
+        max_f = f_s
+        best_kernel = kernel
+        best_dist = dist
+        best_width = width
+        best_h = h
+print(max_f, best_kernel, best_dist, best_width, best_h, sep=' ')
 
-for i in range(len(f_fixed)):
-    k_fixed.append(f_fixed[i][0])
-    fs_f.append(f_fixed[i][1])
-print(best)
-target_class = k_func(best[2], best[1], best[3], best[4], target, data_n)
-if target_class <= 1.5:
-    target_class = 1
-elif 1.5 < target_class <= 2.5:
-    target_class = 2
+target_class = k_func(best_dist, best_kernel, best_width, best_h, target, data_n)
+
+f_scs = []
+if best_width == WidthType.fixed:
+    n_h = np.linspace(0.1, 4, 10)
 else:
-    target_class = 3
-print(target_class)
+    n_h = range(1, 101, 2)
+for i in n_h:
+    conf_m= cross_v(best_kernel, best_dist, best_width, i)
+    temp_f = f_score(conf_m)
+    f_scs.append(temp_f)
 
-pyplot.plot(k_fixed, fs_f)
-pyplot.plot(h_variable, fs_f)
+pyplot.plot(n_h, f_scs)
