@@ -87,7 +87,8 @@ CONST  -> `String` | `Number` | True | False | (S')
 [Парсер](https://github.com/wagnod/itmo/blob/master/MT/TopDownParser/src/main/java/Parser.kt)
 
 ## 4. Визуализация дерева разбора
-Дерево разбора реализовано с помощью [GraphViz](https://github.com/nidi3/graphviz-java)
+Дерево разбора реализовано с помощью [GraphViz](https://github.com/nidi3/graphviz-java).
+
 В данном дереве для каждого токена существует не больше одной вершины (если токен повторяется в выражении несколько раз,
 новая вершина создаваться не будет). Зеленым цветом выделены вершины терминалов.
 
