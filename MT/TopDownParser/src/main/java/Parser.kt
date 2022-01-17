@@ -24,7 +24,7 @@ class Parser(private val lex: LexicalAnalyzer) {
             graph.add(node.link(Link.to(vars)))
             // :
             if (lex.curToken != Token.SEMICOLON) {
-                throw ParseException("Unexpected token" + lex.str + lex.curPos)
+                throw ParseException("Unexpected token ${lex.str} at pos ${lex.curPos}")
             }
             graph.add(node.link(Link.to(node(":").with(GREEN))))
             lex.nextToken()
@@ -40,7 +40,12 @@ class Parser(private val lex: LexicalAnalyzer) {
         val node = node("S'")
         graph.add(node)
         val options = listOf(Token.NAME, Token.NOT, Token.VALUE, Token.LPAREN)
-        if (lex.curToken in options) {
+        if (lex.curToken == Token.LAMBDA) {
+            val s = nonTermS()
+            graph.add(node.link(Link.to(s)))
+            return node
+        }
+        else if (lex.curToken in options) {
             val or = nonTermOr()
             graph.add(node.link(Link.to(or)))
             return node
@@ -208,6 +213,7 @@ class Parser(private val lex: LexicalAnalyzer) {
             lex.nextToken()
             graph.add(node.link(Link.to(node("(").with(GREEN))))
             val sP = nonTermSPrime()
+
             if (lex.curToken == Token.RPAREN) {
                 lex.nextToken()
                 graph.add(

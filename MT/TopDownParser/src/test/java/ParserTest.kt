@@ -22,8 +22,8 @@ class ParserTest {
         fun parserErrorString() = mutableListOf<Arguments>().apply {
             this.add(Arguments.of("n: n and true", "Unexpected token ", "n", 1))
             this.add(Arguments.of("lambda a, b : a not not (b == 2)", "Unexpected token ", "not", 19))
-            this.add(Arguments.of("lambda a b : a not not (b == 2)", "Unexpected token ", "b", 7))
-            this.add(Arguments.of("lambda n: n and == true", "Unexpected token ", "==", 19))
+            this.add(Arguments.of("lambda a b : a not not (b == 2)", "Unexpected token ", "b", 10))
+            this.add(Arguments.of("lambda n: n and == true", "Unexpected token ", "==", 18))
             this.add(Arguments.of("lambda n : n or (not n", "Unexpected token ", " ", 22))
         }
 
