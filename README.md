@@ -19,3 +19,8 @@ Description of each task is inside the root folder.
 * [Operators Overloading: Class Integer](https://github.com/wagnod/itmo/tree/master/c%2B%2B/hw9)
 * [Implementation of Template Version of Class Array](https://github.com/wagnod/itmo/tree/master/c%2B%2B/hw10)
 * [Linked_ptr Implementation](https://github.com/wagnod/itmo/tree/master/c%2B%2B/hw11)
+
+## [Translation Methods Course](https://github.com/wagnod/itmo/tree/master/MT)
+Description of each task is inside the root folder.
+* [Manual Construction of Top-Down Parser](https://github.com/wagnod/itmo/tree/master/MT/TopDownParser)
+* [Using Automatic Analyzer Generators - ANTLR](https://github.com/wagnod/itmo/tree/master/MT/ANTLRParsing)
