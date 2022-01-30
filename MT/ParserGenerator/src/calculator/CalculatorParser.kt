@@ -1,23 +1,23 @@
 package calculator
 
 class Node(val text: String, val rule: Rule) {
-    var value : Int = 0
+    var value: Int = 0
     val children = mutableListOf<Node>()
 }
-    
+
 class ParseException(message: String?) : Throwable(message)
 
-class CalculatorParser (private val lexer: CalculatorLexer) {
+class CalculatorParser(private val lexer: CalculatorLexer) {
     var result = Node("EPS", Rule.EPS)
-    
+
     fun parse() {
         lexer.nextToken()
         result = start()
     }
-    
-    fun fact( ) : Node {
+
+    fun fact(): Node {
         var res = Node("fact", Rule.fact)
-        
+
         var currentRule = lexer.curToken.token
         when (currentRule) {
             Rule.NUMBER -> {
@@ -26,18 +26,18 @@ class CalculatorParser (private val lexer: CalculatorLexer) {
                 consume(Rule.NUMBER)
                 res.value = Integer.parseInt(NUMBER.text)
             }
-			Rule.OPEN -> {
+            Rule.OPEN -> {
                 val OPEN = Node(lexer.curToken.text, Rule.OPEN)
                 res.children.add(OPEN)
                 consume(Rule.OPEN)
-				val start = start( )
+                val start = start()
                 res.children.add(start)
-				val CLOSE = Node(lexer.curToken.text, Rule.CLOSE)
+                val CLOSE = Node(lexer.curToken.text, Rule.CLOSE)
                 res.children.add(CLOSE)
                 consume(Rule.CLOSE)
                 res.value = start.value
             }
-             
+
             Rule.END -> {
                 return res
             }
@@ -46,18 +46,18 @@ class CalculatorParser (private val lexer: CalculatorLexer) {
         return res
     }
 
-	fun start( ) : Node {
+    fun start(): Node {
         var res = Node("start", Rule.start)
 
         var currentRule = lexer.curToken.token
         when (currentRule) {
             Rule.NUMBER -> {
-                val expr = expr( )
+                val expr = expr()
                 res.children.add(expr)
                 res.value = expr.value
             }
-			Rule.OPEN -> {
-                val expr = expr( )
+            Rule.OPEN -> {
+                val expr = expr()
                 res.children.add(expr)
                 res.value = expr.value
             }
@@ -70,7 +70,7 @@ class CalculatorParser (private val lexer: CalculatorLexer) {
         return res
     }
 
-	fun termP(acc : Int) : Node {
+    fun termP(acc: Int): Node {
         var res = Node("termP", Rule.termP)
         res.value = acc
         var currentRule = lexer.curToken.token
@@ -79,39 +79,39 @@ class CalculatorParser (private val lexer: CalculatorLexer) {
                 val DIV = Node(lexer.curToken.text, Rule.DIV)
                 res.children.add(DIV)
                 consume(Rule.DIV)
-				val fact = fact( )
+                val fact = fact()
                 res.children.add(fact)
-				val termP = termP(acc / fact.value)
+                val termP = termP(acc / fact.value)
                 res.children.add(termP)
                 res.value = termP.value
             }
-			Rule.MUL -> {
+            Rule.MUL -> {
                 val MUL = Node(lexer.curToken.text, Rule.MUL)
                 res.children.add(MUL)
                 consume(Rule.MUL)
-				val fact = fact( )
+                val fact = fact()
                 res.children.add(fact)
-				val termP = termP(acc * fact.value)
+                val termP = termP(acc * fact.value)
                 res.children.add(termP)
                 res.value = termP.value
             }
-			Rule.REVDIV -> {
+            Rule.REVDIV -> {
                 val REVDIV = Node(lexer.curToken.text, Rule.REVDIV)
                 res.children.add(REVDIV)
                 consume(Rule.REVDIV)
-				val fact = fact( )
+                val fact = fact()
                 res.children.add(fact)
-				val termP = termP(termP(fact.value).value / acc)
+                val termP = termP(termP(fact.value).value / acc)
                 res.children.add(termP)
                 res.value = termP.value
             }
             Rule.PLUS -> {
                 res.value = acc
             }
-			Rule.MINUS -> {
+            Rule.MINUS -> {
                 res.value = acc
             }
-			Rule.CLOSE -> {
+            Rule.CLOSE -> {
                 res.value = acc
             }
             Rule.END -> {
@@ -122,26 +122,26 @@ class CalculatorParser (private val lexer: CalculatorLexer) {
         return res
     }
 
-	fun term( ) : Node {
+    fun term(): Node {
         var res = Node("term", Rule.term)
-        
+
         var currentRule = lexer.curToken.token
         when (currentRule) {
             Rule.NUMBER -> {
-                val fact = fact( )
+                val fact = fact()
                 res.children.add(fact)
-				val termP = termP(fact.value)
+                val termP = termP(fact.value)
                 res.children.add(termP)
                 res.value = termP.value
             }
-			Rule.OPEN -> {
-                val fact = fact( )
+            Rule.OPEN -> {
+                val fact = fact()
                 res.children.add(fact)
-				val termP = termP(fact.value)
+                val termP = termP(fact.value)
                 res.children.add(termP)
                 res.value = termP.value
             }
-             
+
             Rule.END -> {
                 return res
             }
@@ -150,26 +150,26 @@ class CalculatorParser (private val lexer: CalculatorLexer) {
         return res
     }
 
-	fun expr( ) : Node {
+    fun expr(): Node {
         var res = Node("expr", Rule.expr)
-        
+
         var currentRule = lexer.curToken.token
         when (currentRule) {
             Rule.NUMBER -> {
-                val term = term( )
+                val term = term()
                 res.children.add(term)
-				val exprP = exprP(term.value)
+                val exprP = exprP(term.value)
                 res.children.add(exprP)
                 res.value = exprP.value
             }
-			Rule.OPEN -> {
-                val term = term( )
+            Rule.OPEN -> {
+                val term = term()
                 res.children.add(term)
-				val exprP = exprP(term.value)
+                val exprP = exprP(term.value)
                 res.children.add(exprP)
                 res.value = exprP.value
             }
-             
+
             Rule.END -> {
                 return res
             }
@@ -178,7 +178,7 @@ class CalculatorParser (private val lexer: CalculatorLexer) {
         return res
     }
 
-	fun exprP(acc : Int) : Node {
+    fun exprP(acc: Int): Node {
         var res = Node("exprP", Rule.exprP)
         res.value = acc
         var currentRule = lexer.curToken.token
@@ -187,25 +187,25 @@ class CalculatorParser (private val lexer: CalculatorLexer) {
                 val PLUS = Node(lexer.curToken.text, Rule.PLUS)
                 res.children.add(PLUS)
                 consume(Rule.PLUS)
-				val term = term( )
+                val term = term()
                 res.children.add(term)
-				val exprP = exprP(acc + term.value)
+                val exprP = exprP(acc + term.value)
                 res.children.add(exprP)
                 res.value = exprP.value
             }
-			Rule.MINUS -> {
+            Rule.MINUS -> {
                 val MINUS = Node(lexer.curToken.text, Rule.MINUS)
                 res.children.add(MINUS)
                 consume(Rule.MINUS)
-				val term = term( )
+                val term = term()
                 res.children.add(term)
-				val exprP = exprP(acc - term.value)
+                val exprP = exprP(acc - term.value)
                 res.children.add(exprP)
                 res.value = exprP.value
             }
             Rule.CLOSE -> {
                 res.value = acc
-            } 
+            }
             Rule.END -> {
                 return res
             }
@@ -213,7 +213,7 @@ class CalculatorParser (private val lexer: CalculatorLexer) {
         }
         return res
     }
-    
+
     fun consume(expected: Rule) {
         val actual = lexer.curToken.token
         if (expected != actual) {

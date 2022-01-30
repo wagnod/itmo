@@ -11,28 +11,29 @@ class CalculatorLexer(private val input: String) {
 
     private fun isBlank(c: Char): Boolean = (c == ' ' || c == '\r' || c == '\n' || c == '\t')
 
-    private val allPatterns = Pattern.compile("(\\*)|(/)|(%)|(\\+)|(-)|(\\\\)|(\\()|(\\))|([\\n\\r\\t ]+)|(Int)|(Double)|(\\d+(\\.\\d+)?)")
-    
+    private val allPatterns =
+        Pattern.compile("(\\*)|(/)|(%)|(\\+)|(-)|(\\\\)|(\\()|(\\))|([\\n\\r\\t ]+)|(Int)|(Double)|(\\d+(\\.\\d+)?)")
+
     private val tokenRules = listOf(
-            TokenRule(Rule.MUL, Pattern.compile("\\*")),
-			TokenRule(Rule.DIV, Pattern.compile("/")),
-			TokenRule(Rule.MOD, Pattern.compile("%")),
-			TokenRule(Rule.PLUS, Pattern.compile("\\+")),
-			TokenRule(Rule.MINUS, Pattern.compile("-")),
-			TokenRule(Rule.REVDIV, Pattern.compile("\\\\")),
-			TokenRule(Rule.OPEN, Pattern.compile("\\(")),
-			TokenRule(Rule.CLOSE, Pattern.compile("\\)")),
-			TokenRule(Rule.WHITESPACE, Pattern.compile("[\\n\\r\\t ]+")),
-			TokenRule(Rule.INT, Pattern.compile("Int")),
-			TokenRule(Rule.DOUBLE, Pattern.compile("Double")),
-			TokenRule(Rule.NUMBER, Pattern.compile("\\d+(\\.\\d+)?"))
-    )
-    
-    private val ignore = setOf(
-            Rule.WHITESPACE
+        TokenRule(Rule.MUL, Pattern.compile("\\*")),
+        TokenRule(Rule.DIV, Pattern.compile("/")),
+        TokenRule(Rule.MOD, Pattern.compile("%")),
+        TokenRule(Rule.PLUS, Pattern.compile("\\+")),
+        TokenRule(Rule.MINUS, Pattern.compile("-")),
+        TokenRule(Rule.REVDIV, Pattern.compile("\\\\")),
+        TokenRule(Rule.OPEN, Pattern.compile("\\(")),
+        TokenRule(Rule.CLOSE, Pattern.compile("\\)")),
+        TokenRule(Rule.WHITESPACE, Pattern.compile("[\\n\\r\\t ]+")),
+        TokenRule(Rule.INT, Pattern.compile("Int")),
+        TokenRule(Rule.DOUBLE, Pattern.compile("Double")),
+        TokenRule(Rule.NUMBER, Pattern.compile("\\d+(\\.\\d+)?"))
     )
 
-    fun find(s: String) : Rule {
+    private val ignore = setOf(
+        Rule.WHITESPACE
+    )
+
+    fun find(s: String): Rule {
         var result = Rule.EPS
         for (r in tokenRules) {
             if (r.pattern.matcher(s).matches()) {
