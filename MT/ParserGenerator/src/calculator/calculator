@@ -1,0 +1,29 @@
+grammar Calculator
+
+< package calculator >
+
+members [ var value : Int ]
+
+// Tokens:
+MUL: "\*"
+DIV: "/"
+MOD: "%"
+PLUS: "\+"
+MINUS: "-"
+REVDIV: "\\"
+
+OPEN: "\("
+CLOSE: "\)"
+
+WHITESPACE: "[\n\r\t ]+" -> skip
+
+INT: "Int"
+DOUBLE: "Double"
+NUMBER: "\d+(\.\d+)?"
+
+termP [val acc : Int] : MUL fact termP ( acc * fact.value ) { res.value = termP.value } | DIV fact termP ( acc / fact.value ) { res.value = termP.value } | EPS { res.value = acc }
+term : fact termP ( fact.value ) { res.value = termP.value }
+fact : NUMBER { res.value = Integer.parseInt(NUMBER.text) } | OPEN start CLOSE { res.value = start.value }
+exprP [ val acc : Int ] : PLUS term exprP ( acc + term.value ) { res.value = exprP.value } | MINUS term exprP ( acc - term.value ) { res.value = exprP.value } | EPS { res.value = acc }
+expr : term exprP ( term.value ) { res.value = exprP.value }
+start : expr { res.value = expr.value }

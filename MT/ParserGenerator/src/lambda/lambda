@@ -1,0 +1,38 @@
+grammar Lambda
+
+< package lambda >
+
+members [ var value : String ]
+
+start: LAMBDA param SEMICOLON sP { res.value = LAMBDA.text + " " + param.value + ": " + sP.value }
+
+param: ID paramP { res.value = ID.text + " " + paramP.value } | EPS { res.value = "" }
+paramP: COMMA param { res.value = COMMA.text + " " + param.value } | EPS { res.value = "" }
+
+sP: or { res.value = or.value }
+
+or: and orP { res.value = and.value + " " + orP.value }
+orP: OR or { res.value = OR.text + " " + or.value } | EPS { res.value = "" }
+
+and: not andP { res.value = not.value + " " + andP.value}
+andP: AND and { res.value = AND.text + " " + and.value } | EPS { res.value = "" }
+
+not: NOT eq { res.value = NOT.text + " " + eq.value } | eq { res.value = eq.value }
+
+eq: const eqP { res.value = const.value + " " + eqP.value }
+eqP: EQ eq { res.value = EQ.text + " " + eq.value } | EPS { res.value = "" }
+
+const: ID { res.value = ID.text } | NUMBER { res.value = NUMBER.text } | LPAREN sP RPAREN { res.value = LPAREN.text + " " + sP.value + " " + RPAREN.text }
+
+AND: "and"
+OR: "or"
+NOT: "not"
+EQ: "=="
+LAMBDA: "lambda"
+SEMICOLON: ":"
+COMMA: ","
+LPAREN: "\("
+RPAREN: "\)"
+NUMBER: "\d+(\.\d+)?"
+ID: "[a-zA-Z][a-zA-Z0-9]*"
+WHITESPACE: "[\n\r\t ]+" -> skip
