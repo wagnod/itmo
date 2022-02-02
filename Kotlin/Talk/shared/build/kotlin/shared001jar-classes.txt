@@ -1,0 +1,1 @@
+D:\study\Kotlin\Talk\shared\build\classes\kotlin\main\Message.class;D:\study\Kotlin\Talk\shared\build\classes\kotlin\main\ProtocolKt.class;D:\study\Kotlin\Talk\shared\build\classes\kotlin\main\UserAddress.class;D:\study\Kotlin\Talk\shared\build\classes\kotlin\main\UserInfo.class

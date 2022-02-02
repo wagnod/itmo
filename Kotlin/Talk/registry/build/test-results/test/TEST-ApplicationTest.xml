@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ApplicationTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-02-02T11:12:12" hostname="DESKTOP-EJ9JECQ" time="1.503">
+  <properties/>
+  <testcase name="register bad user name()" classname="ApplicationTest" time="1.32"/>
+  <testcase name="register user()" classname="ApplicationTest" time="0.024"/>
+  <testcase name="register user duplicate()" classname="ApplicationTest" time="0.024"/>
+  <testcase name="delete user()" classname="ApplicationTest" time="0.031"/>
+  <testcase name="list users()" classname="ApplicationTest" time="0.04"/>
+  <testcase name="update user info()" classname="ApplicationTest" time="0.02"/>
+  <testcase name="health endpoint()" classname="ApplicationTest" time="0.01"/>
+  <testcase name="update bad user info()" classname="ApplicationTest" time="0.027"/>
+  <system-out><![CDATA[2022-02-02 14:12:13.033 [Test worker] INFO  ktor.test - Autoreload is disabled because the development mode is off.
+2022-02-02 14:12:13.044 [Test worker] INFO  ktor.test - Application started in 0.072 seconds.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

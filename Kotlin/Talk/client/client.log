@@ -1,0 +1,12 @@
+14:11:53.979 [Thread-3] [] INFO  http-server - Autoreload is disabled because the development mode is off. 
+14:11:54.127 [Thread-3] [] INFO  http-server - Responding at http://127.0.0.1:9999 
+14:11:54.128 [Thread-3] [] INFO  http-server - Application started in 0.506 seconds. 
+14:11:54.129 [Thread-3] [] DEBUG http-server - Application started: io.ktor.application.Application@1896696b 
+14:11:55.334 [eventLoopGroupProxy-4-1 @call-handler#4] [] DEBUG http-server - [32m200 OK[m: [36mPOST[m - /v1/message 
+14:11:55.338 [eventLoopGroupProxy-4-1 @call-handler#5] [] DEBUG http-server - [32m200 OK[m: [36mPOST[m - /v1/message 
+14:11:55.345 [eventLoopGroupProxy-4-1 @call-handler#6] [] DEBUG http-server - [32m200 OK[m: [36mPOST[m - /v1/message 
+14:11:55.353 [eventLoopGroupProxy-4-1 @call-handler#7] [] DEBUG http-server - [32m200 OK[m: [36mPOST[m - /v1/message 
+14:11:55.359 [eventLoopGroupProxy-4-1 @call-handler#8] [] DEBUG http-server - [32m200 OK[m: [36mPOST[m - /v1/message 
+14:11:55.365 [eventLoopGroupProxy-4-1 @call-handler#9] [] DEBUG http-server - [32m200 OK[m: [36mPOST[m - /v1/message 
+14:11:57.701 [Thread-3] [] DEBUG http-server - Application stopping: io.ktor.application.Application@1896696b 
+14:11:57.702 [Thread-3] [] DEBUG http-server - Application stopped: io.ktor.application.Application@1896696b 
