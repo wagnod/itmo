@@ -5,7 +5,7 @@
 
 ## Задание
 
-В файле [`src/AtomicCounter.kt`](src/AtomicCounter.kt) 
+В файле [`src/AtomicCounter.kt`](src/main/kotlin/AtomicCounter.kt) 
 находится описание интерфейса счетчика, который вам предстоит реализовать. 
 Вам надо реализовать всего одну операцию:
 
@@ -22,8 +22,8 @@ fun decide(value: T): T
 
 Ваше решение должно быть в файле `src/Solution.(kt|java)`. Основной класс должен называться `Solution`.
 Шаблоны решений вы найдете здесь: 
-* На языке Kotlin в файле [`src/SolutionTemplateKt.kt`](src/SolutionTemplateKt.kt) 
-* На языке Java в файле [`src/SolutionTemplateJava.java`](src/SolutionTemplateJava.java)
+* На языке Kotlin в файле [`src/SolutionTemplateKt.kt`](src/main/kotlin/SolutionTemplateKt.kt) 
+* На языке Java в файле [`src/SolutionTemplateJava.java`](src/main/kotlin/SolutionTemplateJava.java)
 
 **В заголовке файла, в строке `@author` впишите вашу фамилию и имя**.
 В классе решения вы можете использовать объекты типа `Consensus` для синхронизации потоков, объекты 
@@ -38,10 +38,10 @@ fun decide(value: T): T
 * `gradlew build` на Windows
  
 Тесты:
-* [`CorrectnessTest`](test/CorrectnessTest.kt) проверяет последовательную спецификацию и выполнение ограничений 
+* [`CorrectnessTest`](src/test/kotlin/CorrectnessTest.kt) проверяет последовательную спецификацию и выполнение ограничений 
   описанных в условии. 
-* [`LinearizabilityTest`](test/LinearizabilityTest.kt) проверяет линеаризуемость вашего решения. 
-* [`LockFreedomTest`](test/LockFreedomTest.kt) проверяет что в вашем решении не используются блокировки.
+* [`LinearizabilityTest`](src/test/kotlin/LinearizabilityTest.kt) проверяет линеаризуемость вашего решения. 
+* [`LockFreedomTest`](src/test/kotlin/LockFreedomTest.kt) проверяет что в вашем решении не используются блокировки.
 
 ## Формат сдачи
 
